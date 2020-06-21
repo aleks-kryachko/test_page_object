@@ -56,13 +56,13 @@ def test_message_disappeared_after_adding_product_to_basket(browser):
     page.is_dissappeared()
 
 # Четвертое задание вызывать страницу логиеа с людой вкладки
-def test_guest_should_see_login_link_on_product_page(browser):
+def test_guest_should_see_login_link_on_product_page(browser): # Коректность линк
     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
     page = ProductPage(browser, link)
     page.open()
     page.should_be_login_link()
 
-def test_guest_can_go_to_login_page_from_product_page(browser):
+def test_guest_can_go_to_login_page_from_product_page(browser):  # Проверка возможности перехода
     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
     page = ProductPage(browser, link)
     page.open()
