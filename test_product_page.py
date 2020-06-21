@@ -76,7 +76,7 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     basket_page.should_be_message_empty_basket()   # Ожидаем, что есть текст о том что корзина пуста
 
 class TestUserAddToBasketFromProductPage():
-    def setup(self, browser):
+    def test_setup(self, browser):
         link = "http://selenium1py.pythonanywhere.com/en-gb/accounts/login/"
         self.login_page = LoginPage(browser, link)
         self.login_page.open()
@@ -92,8 +92,8 @@ class TestUserAddToBasketFromProductPage():
 
     @pytest.mark.need_review
     def test_user_can_add_product_to_basket(self, browser):
+        link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1"
         self.page = ProductPage(browser, link)
         self.page.open()
-        self.page.add_to_basket()
-        self.page.should_be_book_name()
-        self.page.should_be_book_price()
+        self.page.should_be_add_to_basket()
+
