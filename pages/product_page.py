@@ -15,7 +15,7 @@ class ProductPage(BasePage):
         button = self.browser.find_element(*ProductPageLocators.add_button)
         button.click()
 
-    def solve_quiz_and_get_code(self):
+    def solve_quiz_and_get_code(self):   # Проходим валидацию считаем контрольную сумму
         alert = self.browser.switch_to.alert
         x = alert.text.split(" ")[2]
         answer = str(math.log(abs((12 * math.sin(float(x))))))
@@ -38,3 +38,11 @@ class ProductPage(BasePage):
         book_price = self.browser.find_element(*ProductPageLocators.book_price).text
         basket_price = self.browser.find_element(*ProductPageLocators.book_price_basket).text
         assert book_price == basket_price, "Цена в корзине и в каталоге не совпадают"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.success_message), \
+           "Success message is presented, but should not be--Сообщение об успехе есть. но не должно быть"
+
+    def is_dissappeared(self):
+        assert self.is_disappeared(*ProductPageLocators.success_message), \
+            "Success message is presented, but should not be"

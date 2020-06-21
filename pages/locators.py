@@ -16,3 +16,4 @@ class ProductPageLocators():
     book_price = (By.CSS_SELECTOR, ".col-sm-6.product_main .price_color")
     book_name_basket = (By.CSS_SELECTOR, "#messages>div:nth-child(1) strong")
     book_price_basket = (By.CSS_SELECTOR, "#messages>div:nth-child(3) strong")
+    success_message = (By.CSS_SELECTOR, "#messages>div:nth-child(1)")
