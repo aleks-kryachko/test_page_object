@@ -2,18 +2,22 @@ from selenium.webdriver.common.by import By
 
 
 class MainPageLocators():
-    login_link = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
 class LoginPageLocators():
-    login_link = (By.CSS_SELECTOR, "#login_link")
-    login_form = (By.CSS_SELECTOR, "#login_form")
-    button_enter =(By.NAME, "login_submit")
-    button_registration = (By.NAME, "registration_submit")
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
+    BUTTON_ENTER =(By.NAME, "login_submit")
+    BUTTON_REGISTRATION = (By.NAME, "registration_submit")
 
 class ProductPageLocators():
-    add_button = (By.CSS_SELECTOR, ".btn-add-to-basket")
-    book_name = (By.CSS_SELECTOR, ".product_main h1")
-    book_price = (By.CSS_SELECTOR, ".col-sm-6.product_main .price_color")
-    book_name_basket = (By.CSS_SELECTOR, "#messages>div:nth-child(1) strong")
-    book_price_basket = (By.CSS_SELECTOR, "#messages>div:nth-child(3) strong")
-    success_message = (By.CSS_SELECTOR, "#messages>div:nth-child(1)")
+    ADD_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")
+    BOOK_NAME = (By.CSS_SELECTOR, ".product_main h1")
+    BOOK_PRICE = (By.CSS_SELECTOR, ".col-sm-6.product_main .price_color")
+    BOOK_NAME_BASKET = (By.CSS_SELECTOR, "#messages>div:nth-child(1) strong")
+    BOOK_PRICE_BASKET = (By.CSS_SELECTOR, "#messages>div:nth-child(3) strong")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages>div:nth-child(1)")
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")

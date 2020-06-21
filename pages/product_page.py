@@ -11,8 +11,8 @@ class ProductPage(BasePage):
         self.should_be_book_price()
 
     def add_to_basket(self):
-        assert self.is_element_present(*ProductPageLocators.add_button), "Кнопки добавить нет"
-        button = self.browser.find_element(*ProductPageLocators.add_button)
+        assert self.is_element_present(*ProductPageLocators.ADD_BUTTON), "Кнопки добавить нет"
+        button = self.browser.find_element(*ProductPageLocators.ADD_BUTTON)
         button.click()
 
     def solve_quiz_and_get_code(self):   # Проходим валидацию считаем контрольную сумму
@@ -30,19 +30,19 @@ class ProductPage(BasePage):
             print("No second alert presented")
 
     def should_be_book_name(self):
-        book_name = self.browser.find_element(*ProductPageLocators.book_name).text
-        book_basket = self.browser.find_element(*ProductPageLocators.book_name_basket).text
+        book_name = self.browser.find_element(*ProductPageLocators.BOOK_NAME).text
+        book_basket = self.browser.find_element(*ProductPageLocators.BOOK_NAME_BASKET).text
         assert book_name == book_basket, "Имя в корзине и в каталоге не совпадают"
 
     def should_be_book_price(self):
-        book_price = self.browser.find_element(*ProductPageLocators.book_price).text
-        basket_price = self.browser.find_element(*ProductPageLocators.book_price_basket).text
+        book_price = self.browser.find_element(*ProductPageLocators.BOOK_PRICE).text
+        basket_price = self.browser.find_element(*ProductPageLocators.BOOK_PRICE_BASKET).text
         assert book_price == basket_price, "Цена в корзине и в каталоге не совпадают"
 
     def should_not_be_success_message(self):
-        assert self.is_not_element_present(*ProductPageLocators.success_message), \
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
            "Success message is presented, but should not be--Сообщение об успехе есть. но не должно быть"
 
     def is_dissappeared(self):
-        assert self.is_disappeared(*ProductPageLocators.success_message), \
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
             "Success message is presented, but should not be"
