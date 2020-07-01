@@ -23,15 +23,17 @@ jobs:
           
     - uses: actions/checkout@v2
     - name: Set up Python
-      uses: fylein/python-pytest-github-action@v1
-      #uses: actions/setup-python@v2
+      #uses: fylein/python-pytest-github-action@v1
+      uses: actions/setup-python@v2
       with:
         python-version: '3.x'
-        args: pip install -r requirements.txt && pytest test/unit
-#     - name: Install dependencies
-#       run: |
-#         python -m pip install --upgrade pip
-#         pip install setuptools wheel twine
+       # args: pip install -r requirements.txt && pytest test/unit
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install setuptools wheel twine
+        pip install pytest
+        pip install selenium
     - name: Build and publish
 #       env:
 #         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
