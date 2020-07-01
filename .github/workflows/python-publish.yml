@@ -31,14 +31,16 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Build and publish
-      #env:
+      env:
+        BROWSER: chrome
       #  TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
       #  TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
       run: |
         
         python test_login_page.py
         #pytest test_main_page.py
-        
+        env:
+        BROWSER: chrome
         
 
         
