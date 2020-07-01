@@ -26,6 +26,5 @@ jobs:
       with:
         python-version: '3.x'
     - name: Install dependencies
-      run: |
-       test_page_object/test_product_page.py
+      run: test_page_object/test_product_page.py
         
