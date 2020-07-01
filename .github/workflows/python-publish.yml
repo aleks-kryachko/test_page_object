@@ -33,6 +33,9 @@ jobs:
       env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-      run: test_page_object/test_product_page.py
+      run: |
+        pytest -v --tb=line --language=en test_login_page.py
+        
+        
 
         
