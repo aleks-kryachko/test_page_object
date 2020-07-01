@@ -39,7 +39,8 @@ jobs:
 #         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
 #         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
       run: |
-        pytest -v --tb=line --language=en test_login_page.py
+        pytest test_login_page.py
+        pytest test_main_page.py
         
         
 
