@@ -37,8 +37,8 @@ jobs:
       #  TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
       run: |
         
-        python test_login_page.py
-        #pytest test_main_page.py
+        pytest -v --tb=line --language=en test_login_page.py
+        
         env:
         BROWSER: chrome
         
