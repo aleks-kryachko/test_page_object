@@ -32,19 +32,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Build and publish
-#       env:
-#         SELENIUM_HUB_HOST: 'localhost'
-#         BROWSER: chrome
-      #env:
-        
-      #  TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
-      #  TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-      run: |
-        
+      run: |        
         pytest -v --tb=line --language=en test_product_page.py
-        
-        env:
-         BROWSER: chrome
+        pytest -v --tb=line --language=en test_main_page.py
+        pytest -v --tb=line test_login_page.py
+       # env:
+       #  BROWSER: chrome
         
 
         
