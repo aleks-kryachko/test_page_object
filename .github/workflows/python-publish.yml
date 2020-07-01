@@ -34,6 +34,6 @@ jobs:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
       run: |
-        test_page_object/test_product_page.py
+        test_product_page.py
 
         
