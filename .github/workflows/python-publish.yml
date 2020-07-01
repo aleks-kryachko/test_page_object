@@ -31,6 +31,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Build and publish
+      env:
+        SELENIUM_HUB_HOST: 'localhost'
+        BROWSER: chrome
       #env:
         
       #  TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
